@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Attribution -->
+  <PropertyGroup>
+    <Authors>Nathan Lucci</Authors>
+    <Company>Runaway Systems</Company>
+  </PropertyGroup>
+
+
+  <!-- Dotnet Configuration -->
+  <PropertyGroup>
+    <!-- netstandard2.0 supports Unity as far back as 2018.1 and C# 7.3
+         2.1 supports 2021.2 onward and C# 8.0
+         Godot 4 targets .NET 6 and C# 10
+    -->
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <!-- Nuget Publishing Configuration -->
+  <PropertyGroup>
+    <Title>Runaway Systems Core</Title>
+    <Version>0.1.0</Version>
+    <Description>Code shared between many Runaway Systems modules.</Description>
+    <!--  <PackageReadmeFile>README.md</PackageReadmeFile> -->
+    <PackageReleaseNotes>SemanticVersion struct added as the only contents of the library.</PackageReleaseNotes>
+    <PackageTags>runaway; systems;</PackageTags>
+
+    <NeutralLanguage>en</NeutralLanguage>
+    <PackageProjectUrl>https://github.com/RunawaySystems/Core</PackageProjectUrl>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/RunawaySystems/Core</RepositoryUrl>
+    
+      <PackageLicenseFile>LICENSE.MD</PackageLicenseFile>
+      <Copyright>Runaway Systems</Copyright>
+  </PropertyGroup>
+  <!-- Nuget Publishing Configuration -->
+  <ItemGroup>
+    <None Include="LICENSE.MD" Pack="true" PackagePath="\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="src\ExtensionMethods\" />
+  </ItemGroup>
+
+</Project>
