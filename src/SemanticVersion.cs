@@ -42,6 +42,7 @@ namespace RunawaySystems {
 
         public override bool Equals(object value) => value is SemanticVersion version && this == version;
 
+
         #region Operator Overloads
 
         public static bool operator ==(SemanticVersion a, SemanticVersion b) => a.Major == b.Major && a.Minor == b.Minor && a.Patch == b.Patch;
@@ -64,7 +65,9 @@ namespace RunawaySystems {
 
         #endregion
 
-        public override int GetHashCode() => unchecked(Major.GetHashCode() + Minor.GetHashCode() + Patch.GetHashCode());
+        public override int GetHashCode() => (int)unchecked(Cantor(Major, Cantor(Minor, Patch)));
+
+        private uint Cantor(uint a, uint b) => (a + b + 1) * (a + b) / 2 + b;
 
         public override string ToString() => string.Join(".", Major, Minor, Patch);
 
